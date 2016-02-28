@@ -1,5 +1,9 @@
 ECHO ON
 
+cd admin
+vagrant halt
+cd..
+
 cd statehosts
 vagrant halt
 cd..
@@ -12,11 +16,11 @@ cd proxy
 vagrant halt
 cd..
 
-cd boxing
+
+cd managehosts
 vagrant halt
 cd..
 
-
-if errorlevel 1 (
-  ECHO FAILURE! Vagrant VM unresponsive...
-)
+cd boxing
+vagrant halt
+cd..

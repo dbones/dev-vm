@@ -9,16 +9,17 @@ $vm_mem = "1024"
 $vb_gui = false
 
 $hostname = "admin-%02d"
-$boximage = "rancherio/rancheros"  #either box-cutter/ubuntu1404-docker or rancherio/rancheros
+$boximage = "box-cutter/ubuntu1404-docker"  #either box-cutter/ubuntu1404-docker or rancherio/rancheros
 
 def config_node(node, hostname, i)
   node.vm.hostname = hostname
-  node_ip = "172.19.8.#{i+99}"
+  node_ip = "172.19.8.100"
   node.vm.network 'private_network', ip: node_ip
   node.vm.provision :shell, :inline => 'docker run --name=rancher-server -l io.rancher.container.system=rancher-agent --restart=always -d -p 8080:8080 rancher/server:latest', :privileged => true
 end
 
 Vagrant.configure(2) do |config|
+  config.vm.box_download_insecure = true
   config.vm.box   = $boximage
 
   (1..$number_of_nodes).each do |i|

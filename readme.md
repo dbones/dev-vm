@@ -34,6 +34,8 @@ knowledge
 - **statehosts**, will host databases and queues **(172.19.8.120 +)**
 - **proxy**, will host any proxy / loadbalancers **(172.19.8.150)**
 - **admin**, will host the master / orchastrator **(172.19.8.100)**
+- **ccs**, will host monitoring/logging services **(172.19.8.130 +)**
+- 
 - **boxing**, used to build docker images **(172.19.8.42)**
 
 #Helpful Environment variable
