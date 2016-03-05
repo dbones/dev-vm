@@ -1,5 +1,9 @@
 ECHO ON
 
+cd admin
+vagrant up
+cd..
+
 cd statehosts
 vagrant up
 cd..
@@ -17,9 +21,5 @@ vagrant up
 cd..
 
 cd boxing
-vagrant up
-cd..
-
-cd admin
 vagrant up
 cd..
