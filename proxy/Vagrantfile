@@ -9,7 +9,7 @@ $vm_mem = "512"
 $vb_gui = false
 
 $hostname = "proxy-%02d"
-$boximage = "box-cutter/ubuntu1404-docker"  #either box-cutter/ubuntu1404-docker or rancherio/rancheros
+$boximage = "comiq/dockerbox"  #either box-cutter/ubuntu1404-docker or rancherio/rancheros
 
 def config_node(node, hostname, i)
   node.vm.hostname = hostname
